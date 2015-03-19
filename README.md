@@ -27,6 +27,18 @@ docker ps -a | tail -n +2 | grep -v 'data-.*$'
 
 to return you a list of all images which aren't named "data-*" which you could remove.
 
+## Backup
+
+```bash
+mkdir -p backup
+docker run --volumes-from data-jenkins -v $(pwd)/backup:/backup ubuntu tar cvf /backup/backup.tar /var/jenkins_home
+```
+
+Note that centos:latest doesn't come with tar, and tar cvfZ will complain of broken pipes too.
+
+
+
+
 
 
 
