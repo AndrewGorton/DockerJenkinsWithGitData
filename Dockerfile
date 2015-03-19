@@ -1,4 +1,4 @@
-FROM centos
+FROM busybox
 MAINTAINER Andrew Gorton (http://andrewgorton.uk)
 RUN mkdir -p /var/jenkins_home
 USER root
